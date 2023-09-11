@@ -1,26 +1,26 @@
 # Mini Project Practice: Console Based ATM
 
-Please follow this instruction **before** you work on this project:
+Harap ikuti instruksi berikut **sebelum** Anda mulai mengerjakan proyek ini:
 
-1. Clone this project
-2. Create a new branch, using your username as the branch name
-3. Edit this form below to match your identity, commit as "init"
-4. Push to the same repository
-5. Read thoroughly every aspects and details of the project
-6. Now you can go on, **GOOD LUCK** in the process!
+1. Clone project ini.
+2. Buat branch baru dengan menggunakan nama Anda sebagai nama branch.
+3. Edit formulir di bawah ini sesuai dengan identitas Anda, lakukan commit dengan pesan "init."
+4. Push perubahan ke repositori yang sama.
+5. Baca dengan seksama setiap aspek dan detail project.
+6. Sekarang Anda dapat melanjutkan pengerjaan project, **Semoga Beruntung** dalam prosesnya!
 
 ---
 
 ```plaintext
-Full Name:    { PUT YOUR NAME HERE }
-Organization: { PUT YOUR ORGANIZATION NAME HERE }
+Nama Lengkap:         { MASUKKAN NAMA ANDA DISINI }
+Asal Kampus/Sekolah:  { MASUKKAN NAMA LEMBAGA ANDA DISINI }
 ```
 
 ---
 
 ## Heads Up
 
-> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+> The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 > NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
 > "OPTIONAL" in this document are to be interpreted as described in
 > [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
@@ -30,130 +30,130 @@ Organization: { PUT YOUR ORGANIZATION NAME HERE }
 - JDK 11 _(Using OpenJDK or Zulu is RECOMMENDED)_
 - Maven 3.8+
 
-## Execution Instruction
+## Instruksi Pelaksanaan
 
-- You SHOULD make sure that you've met development requirements before you continue
-- It is RECOMMENDED that you read the whole source code to better understand the structure and flow of the template
-- You MUST implement features listed under Feature Checklists and SHALL follow rules defined under Constraints, within a timespan of 4 hours
-- All specifications of this project are REQUIRED to be implemented
-- You MAY start developing the application on `com.tujuhsembilan.App` file, at `start` method
-- You MAY modify all source files in this template, without exception, to accomodate your needs; for example: to fix occuring bugs, to match your style of coding, to streamline the program, etc.
-- In case of difficulties, you MAY ask any person in charge of monitoring this test
-- You MAY also browse the internet to find technical support
-- You SHOULD NOT discuss about this project to your colleagues
-- It is RECOMMENDED for you to commit your progress on small scale; for example: you commit every time you've done a single feature
-- Pushing to repository after every commit is OPTIONAL
-- **After you finished this project**, you MAY submit about what you think of this project, or even your personal experience, in the review form at the bottom; be creative! and then you can commit and push once more :)
+- Anda **HARUS** memastikan bahwa Anda telah memenuhi persyaratan sebelum melanjutkan
+- Anda **DISARANKAN** untuk membaca seluruh source code untuk lebih memahami struktur dan alur dari template ini
+- Anda **WAJIB** mengimplementasikan fitur-fitur yang tercantum dalam Feature Checklists dan **HARUS** mengikuti aturan yang ditentukan di bagian "Batasan", dalam jangka waktu 4 jam
+- Semua spesifikasi project ini **WAJIB** diimplementasikan
+- Anda **BOLEH** mulai mengembangkan aplikasi pada file `com.tujuhsembilan.App`, di fungsi `start`
+- Anda **BOLEH** mengubah semua file sumber dalam template ini, tanpa pengecualian, sesuai dengan kebutuhan Anda; misalnya: untuk memperbaiki bug yang muncul, sesuai dengan gaya pengkodean Anda, untuk menyederhanakan program, dll.
+- Dalam hal kesulitan, Anda **BOLEH** bertanya kepada orang yang bertanggung jawab dalam memantau tes ini
+- Anda juga **BOLEH** mencari dukungan teknis di internet (browsing)
+- Anda **TIDAK DIPERBOLEHKAN** untuk melakukan diskusi dalam hal membahas project ini kepada rekan kerja Anda
+- **DISARANKAN** bagi Anda untuk mengcommit progress Anda dalam skala kecil; misalnya: Anda mengcommit setiap kali menyelesaikan satu fitur
+- Melakukan push pekerjaan ke repositori setelah setiap commit adalah **OPSIONAL**
+- **Setelah Anda menyelesaikan project ini**, Anda **BOLEH** mengirimkan pendapat Anda tentang project ini, atau bahkan pengalaman pribadi Anda, dalam formulir ulasan di bagian bawah; berilah sentuhan kreatif! dan kemudian Anda dapat melakukan commit dan push sekali lagi :)
 
 ## Feature Checklists
 
-- [ ] ATM are provided from 4 different banks:
+- [ ] Terdapat 4 jenis ATM dari bank yang berbeda:
 
   - [ ] BRI
   - [ ] BNI
   - [ ] Mandiri
   - [ ] BCA
 
-  each having its own managed customer accounts and money stocks.
+  masing-masing memiliki akun pelanggan dan stok uang sendiri.
 
-- [ ] Every time a Customer accesses the ATM, they should input their account number and pin, before they are able to use its feature.
+- [ ] Setiap kali Nasabah mengakses ATM, mereka harus memasukkan nomor rekening dan pin mereka, sebelum dapat menggunakan fitur-fiturnya.
 
-- [ ] All Customers are able to use whichever ATM they please. However, there will be additional charge applied for criss-cross usage.
+- [ ] Semua Nasabah dapat menggunakan ATM mana pun yang mereka inginkan. Namun, akan dikenakan biaya tambahan untuk penggunaan ATM dari bank berbeda.
 
-- [ ] Each ATM have the same set of currency nominals in Rupiah, and the same set of features:
+- [ ] Setiap ATM memiliki nominal mata uang yang sama dalam Rupiah, dan fitur yang sama:
 
-  - [ ] Account Balance Information
+  - [ ] Informasi Saldo
 
-    This feature shows current account's balance
+    Fitur ini menunjukkan saldo rekening
 
-  - [ ] Money Withdrawal
+  - [ ] Tarik Uang
 
-    This feature allows Customer to withdraw money from their registered account in certain Banks, with a custom withdraw amount
+    Fitur ini memungkinkan Nasabah untuk menarik uang dari rekening yang terdaftar di Bank tertentu, dengan jumlah penarikan yang dapat disesuaikan.
 
-    This feature will tells Customer to take certain number of currency nominals in descending priority based on value, relative to the withdrawn amount; for example: 1x of Nominal C, 3x of Nominal B, 1x of Nominal A
+    Fitur ini akan memberitahu Nasabah untuk mengambil sejumlah nominal mata uang tertentu dengan prioritas nilai dari yang terbesar ke yang terkecil, sesuai dengan jumlah yang akan ditarik, misalnya: 1x dari Nominal C, 3x dari Nominal B, 1x dari Nominal A
 
-    This feature will finally shows remaining account's balance
+    Fitur ini pada akhirnya akan menampilkan sisa saldo rekening
 
-  - [ ] Phone Credits Top-Up
+  - [ ] Isi Ulang Pulsa Telepon
 
-    This feature allows Customer to top-up credit for inputed phone number, at these amount:
+    Fitur ini memungkinkan Nasabah untuk melakukan isi ulang pulsa untuk nomor telepon yang diinputkan dengan nominal tertentu:
 
     - [ ] Rp10.000,00
     - [ ] Rp20.000,00
     - [ ] Rp50.000,00
     - [ ] Rp100.000,00
 
-    This feature will finally shows target phone number, topped-up amount, and remaining account's balance
+    Fitur ini pada akhirnya akan menampilkan nomor telepon yang dituju, jumlah pulsa, dan sisa saldo rekening Nasabah.
 
-  - [ ] Electricity Bills Token
+  - [ ] Token Tagihan Listrik
 
-    This feature allows Customer to buy electricity bills token for inputed bill number, at these amount:
+    Fitur ini memungkinkan Nasabah untuk membeli token tagihan listrik sesuai dengan nomor tagihan yang telah diinputkan, dengan nominal tertentu:
 
     - [ ] Rp50.000,00
     - [ ] Rp100.000,00
     - [ ] Rp200.000,00
     - [ ] Rp500.000,00
 
-    This feature will then tells the Customer of the token, target bill number, and remaining account's balance
+    Fitur ini kemudian akan memberitahukan kepada Nasabah mengenai token, nomor target tagihan, dan sisa saldo rekening.
 
-  - [ ] Account Mutation (Fund Transfer)
+  - [ ] Mutasi Rekening (Transfer Dana)
 
-    This feature allows Customer to transfer funds into certain account number on selected Banks
+    Fitur ini memungkinkan Nasabah untuk melakukan transfer dana ke nomor rekening tertentu pada Bank yang dipilih
 
-    This feature will finally shows target Bank and account, transfered amount, and remaining account's balance
+    Fitur ini pada akhirnya akan menampilkan Bank dan rekening tujuan, jumlah yang ditransfer, dan sisa saldo rekening
 
-  and additionaly for BNI and Mandiri, both will have this feature:
+  Selain itu, untuk BNI dan Mandiri, keduanya akan memiliki fitur ini:
 
-  - [ ] Money Deposit
+  - [ ] Deposit Uang
 
-    This feature allows Customer to deposit money into their account
+    Fitur ini memungkinkan Nasabah untuk menyetor uang ke akun rekening mereka
 
-    This feature will finally shows current account's balance
+    Fitur ini pada akhirnya akan menampilkan saldo rekening Nasabah
 
 ## Constraints
 
-- [ ] The ATM is assumed to be always active, and MUST NOT be able to be turned off
-- [ ] The ATM MUST only accept number as the input
-- [ ] In case of login failure, Customer MUST have a maximum of 3 retries, and further login attempt SHALL be blocked
-- [ ] Money stock on ATM MUST be finite
+- [ ] ATM diasumsikan selalu aktif, dan **TIDAK BOLEH** dimatikan
+- [ ] ATM **WAJIB** hanya menerima nomor sebagai input
+- [ ] Jika terjadi kegagalan login, Nasabah **WAJIB** memiliki maksimal 3 kali percobaan ulang, dan upaya login selanjutnya **HARUS** diblokir
+- [ ] Stok uang di ATM **HARUS** terbatas
 
-  The default amount of stocked money MUST be Rp25.000.000,00
-- [ ] Maximum amount per transaction MUST be Rp2.500.000,00
-- [ ] Maximum daily transaction per account MUST be Rp5.000.000,00
-- [ ] Any maximum expense limitation SHALL only applies on physical transaction, meaning virtual transaction like top-up and transfers MUST NOT be affected
-- [ ] Each account MUST have minimum residue balance of Rp10.000,00
-- [ ] The ATM MUST have these currency nominals:
+  Jumlah standar uang yang disimpan **HARUS** Rp25.000.000,00
+- [ ] Jumlah maksimum per transaksi **HARUS** Rp2.500.000,00
+- [ ] Maksimum transaksi harian per rekening **HARUS** Rp5.000.000,00
+- [ ] Batasan pengeluaran maksimum hanya berlaku untuk transaksi fisik, yang berarti transaksi virtual seperti isi ulang dan transfer **TIDAK TERPENGARUH**
+- [ ] Setiap rekening **HARUS** memiliki saldo residu minimal Rp10.000,00
+- [ ] ATM **HARUS** memiliki nominal mata uang berikut:
 
   - [ ] Rp10.000,00
   - [ ] Rp20.000,00
   - [ ] Rp50.000,00
   - [ ] Rp100.000,00
 
-  There is no individual finite amount for these nominals, and all nominals is assumed to be always available on every ATMs
-- [ ] Money Withdrawal and Money Deposit feature SHALL only accept input for values that is multiples of 10.000
-- [ ] Phone number MUST be between 3 and 15 digits
-- [ ] Criss-cross transaction fee MUST be Rp2.500
-- [ ] Every errors and/or invalid inputs MUST shows proper messages
-- [ ] Every currency number that displayed MUST be formatted to Rupiah standard string, and MUST be spelled in Bahasa; for example:
+  Tidak ada jumlah terbatas untuk nominal ini, dan semua nominal diasumsikan selalu tersedia di setiap ATM
+- [ ] Fitur Penarikan Uang dan Deposit Uang **HANYA** dapat menerima input untuk nilai kelipatan 10.000
+- [ ] Nomor telepon **HARUS** antara 3 dan 15 digit
+- [ ] Biaya transaksi antar bank **HARUS** Rp2.500
+- [ ] Setiap kesalahan dan/atau input yang tidak valid **HARUS** menampilkan pesan yang benar
+- [ ] Setiap angka mata uang yang ditampilkan **HARUS** diformat ke string standar Rupiah, dan **HARUS** dieja dalam Bahasa Indonesia; sebagai contoh:
 
   `Rp10.000,00`\
   `Sepuluh Ribu Rupiah`
-- [ ] Electricity bills token MUST be randomly or procedurally generated, with `{RANDOM_UUID}_{First 8 Digit from SHA_256 of (EPOCH_MILLIS)}_{AMOUNT_OF_BOUGHT_TOKEN}`; for example:
+- [ ] Token tagihan listrik **HARUS** dibuat secara acak atau prosedural, dengan `{RANDOM_UUID}_{First 8 Digit from SHA_256 of (EPOCH_MILLIS)}_{AMOUNT_OF_BOUGHT_TOKEN}`; sebagai contoh:
 
   `aaaa-bb-cc-ddd_2afcb452_50000`\
-  if you bought a Rp50.000,00 token
+  jika Anda membeli token seharga Rp50.000,00
 
-## Additional Information
+## Informasi Tambahan
 
-- Some part of these codes are intentionally made error, and contain bugs; you are REQUIRED to fix these
-- It is RECOMMENDED to use advanced Java features and coding method, to get better points; for example: OOP, collection stream, proper data type, SOLID, modularism, etc.
-- Beautification of the output SHALL NOT have bonus points, so you SHOULD focus on implementing features instead
-- This project SHALL NOT connect to database at this point, so you MUST implement data store on underlying `data.repository` package
+- Beberapa bagian dari kode-kode ini sengaja dibuat salah, dan mengandung bug; Anda **DIHARUSKAN** untuk memperbaikinya
+- **DIREKOMENDASIKAN** untuk menggunakan fitur-fitur dan metode pengkodean Java tingkat lanjut, untuk mendapatkan nilai yang lebih baik; misalnya: OOP, collection stream, tipe data yang tepat, SOLID, modularisme, dll.
+- Mempercantik tampilan hasil **TIDAK** mendapatkan poin bonus, jadi Anda **HARUS** fokus pada penerapan fitur sebagai gantinya
+- Proyek ini **TIDAK BOLEH** terhubung ke basis data pada saat ini, jadi Anda **HARUS** mengimplementasikan penyimpanan data pada paket `data.repository` yang mendasarinya
 
 ---
 
-## Review Form
+## Formulir Review
 
-_Please insert you review here, only after you finished this project, either on completed or due to time-limit!_
+_Silakan masukkan ulasan Anda di sini, hanya setelah Anda menyelesaikan project ini, baik setelah selesai atau karena batas waktu!_
 
-> ```{ WRITE YOUR REVIEW HERE }```
+> ```{ TULIS REVIEW ANDA DISINI }```
