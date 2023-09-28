@@ -43,6 +43,7 @@ Asal Kampus/Sekolah:  { MASUKKAN NAMA LEMBAGA ANDA DISINI }
 - Anda **TIDAK DIPERBOLEHKAN** untuk melakukan diskusi dalam hal membahas project ini kepada rekan kerja Anda
 - **DISARANKAN** bagi Anda untuk mengcommit progress Anda dalam skala kecil; misalnya: Anda mengcommit setiap kali menyelesaikan satu fitur
 - Melakukan push pekerjaan ke repositori setelah setiap commit adalah **OPSIONAL**
+- Fungsi dari masing-masing fitur yang dibuat **WAJIB** terintegrasi dengan program utama agar program bisa dijalankan dengan baik
 - **Setelah Anda menyelesaikan project ini**, Anda **BOLEH** mengirimkan pendapat Anda tentang project ini, atau bahkan pengalaman pribadi Anda, dalam formulir ulasan di bagian bawah; berilah sentuhan kreatif! dan kemudian Anda dapat melakukan commit dan push sekali lagi :)
 
 ## Feature Checklists
