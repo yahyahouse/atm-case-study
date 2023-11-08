@@ -69,9 +69,9 @@ public class App {
     }
 
     public void start() {
-
         if (bank != null && atm != null) {
             ATMLogic.login();
+            printDivider();
             boolean loop = ATMLogic.loggedInAccount != null;
             while (loop) {
                 int num = 1;
