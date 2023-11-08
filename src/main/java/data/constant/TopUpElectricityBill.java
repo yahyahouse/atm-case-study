@@ -1,28 +1,29 @@
 package data.constant;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum CurrencyNominal {
-    M10K(10000),
-    M20K(20000),
-    M50K(50000),
-    M100K(100000),
+public enum TopUpElectricityBill {
+    P50K(50000),
+    P100K(100000),
+    P200K(200000),
+    P500K(500000),
     ;
     private final long name;
 
-    public static CurrencyNominal getByOrder(int amount) {
+    public static TopUpElectricityBill getByOrder(int amount) {
         switch (amount) {
+            case 0:
+                return P50K;
             case 1:
-                return M10K;
+                return P100K;
             case 2:
-                return M20K;
+                return P200K;
             case 3:
-                return M50K;
-            case 4:
-                return M100K;
+                return P500K;
             default:
                 throw new IllegalArgumentException("Cannot find BankCompany of amount " + amount);
         }

@@ -92,9 +92,22 @@ public class BankRepo {
         return store.stream().map(Bank::getCustomers).flatMap(Set::stream)
                 .filter(item -> account.equals(item.getAccount()) && pin.equals(item.getPin())).findAny();
     }
+
     public Optional<Customer> cashWithdrawal(Customer customer) {
         return store.stream().map(Bank::getCustomers).flatMap(Set::stream)
                 .filter(item -> customer.getAccount().equals(item.getAccount()) && customer.getPin().equals(item.getPin())).findAny();
+    }
+
+    public Bank findBankByCustomerName(String customerId) {
+        return store.stream()
+                .filter(bank -> bank.getCustomers()
+                        .stream()
+                        .anyMatch(customer -> customer.getAccount().equals(customerId)))
+                .findFirst()
+                .orElse(null); // Jika tidak ditemukan, bisa mengembalikan null atau nilai default lainnya
+    }
+    public static Bank findBankByBankName(String name) {
+        return store.stream().filter(item -> name.equals(item.getName())).findFirst().orElse(null);
     }
 
 }

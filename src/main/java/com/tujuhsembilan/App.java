@@ -118,9 +118,11 @@ public class App {
                 ATMLogic.electricityBillsToken();
                 break;
             case 5:
+
+            case 6:
                 ATMLogic.accountMutation();
                 break;
-            case 6:
+            case 7:
                 ATMLogic.moneyDeposit();
                 break;
             default:

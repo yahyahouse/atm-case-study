@@ -23,4 +23,25 @@ public class CustomerService {
         long balance = customer.getBalance().longValue();
         customer.setBalance(BigDecimal.valueOf(balance - amount));
     }
+    public void topUpElectricityBill(Customer customer, long amount) {
+        long balance = customer.getBalance().longValue();
+        customer.setBalance(BigDecimal.valueOf(balance - amount));
+    }
+    public void deposit(Customer customer, long amount) {
+        long balance = customer.getBalance().longValue();
+        customer.setBalance(BigDecimal.valueOf(balance + amount));
+    }
+
+    public void transfer(Customer customer,Bank bank, long amount) {
+        Bank customerBankName = bankRepo.findBankByCustomerName(customer.getAccount());
+        if (customerBankName.getName().equals(bank.getName())){
+            long balance = customer.getBalance().longValue();
+            customer.setBalance(BigDecimal.valueOf(balance - amount));
+        }else {
+            int fee = 2500;
+            long balance = customer.getBalance().longValue();
+            customer.setBalance(BigDecimal.valueOf(balance - amount-fee));
+        }
+
+    }
 }
