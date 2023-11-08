@@ -21,7 +21,7 @@ public class App {
         boolean loop = true;
         while (loop) {
             printClear();
-            printDivider();
+
             int num = 1;
             for (String menu : Arrays.asList(BankCompany.values()).stream()
                     .map(item -> "ATM " + item.getName())
@@ -118,7 +118,8 @@ public class App {
                 ATMLogic.electricityBillsToken();
                 break;
             case 5:
-
+                ATMLogic.universityPayment();
+                break;
             case 6:
                 ATMLogic.accountMutation();
                 break;
