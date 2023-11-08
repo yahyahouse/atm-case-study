@@ -157,4 +157,4 @@ Asal Kampus/Sekolah:  { UNIVERSITAS SINGAPERBANGSA KARAWANG }
 
 _Silakan masukkan ulasan Anda di sini, hanya setelah Anda menyelesaikan project ini, baik setelah selesai atau karena batas waktu!_
 
-> ```{ TULIS REVIEW ANDA DISINI }```
+> ```{ Luar Biasa! }```
