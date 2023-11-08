@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import com.tujuhsembilan.logic.ATMLogic;
 
 import data.constant.BankCompany;
+import data.constant.Feature;
 import data.model.ATM;
 import data.model.Bank;
 import data.repository.ATMRepo;
@@ -68,9 +69,31 @@ public class App {
     }
 
     public void start() {
+
         if (bank != null && atm != null) {
             ATMLogic.login();
-            // TODO: Continue Here
+            boolean loop = ATMLogic.loggedInAccount != null;
+            while (loop) {
+                int num = 1;
+                for (String menu : Arrays.asList(Feature.values()).stream()
+                        .map(item -> "ATM " + item.getName())
+                        .collect(Collectors.toList())) {
+                    System.out.println(" " + num + ". " + menu);
+                    num++;
+                }
+                System.out.println(" 0. EXIT");
+
+                int selection = in.nextInt() - 1;
+                if (selection >= 0 && selection < Feature.values().length) {
+                    new App(BankCompany.getByOrder(selection).getName()).start();
+                } else if (selection == -1) {
+                    loop = false;
+                } else {
+                    System.out.println("Invalid input");
+                    delay();
+                }
+            }
+
         } else {
             System.out.println("Cannot find Bank or ATM");
             delay();
@@ -78,3 +101,4 @@ public class App {
     }
 
 }
+

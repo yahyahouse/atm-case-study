@@ -15,18 +15,18 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter(AccessLevel.NONE)
 public class ATM {
-  private String id;
+    private String id;
 
-  private BigDecimal balance;
+    private BigDecimal balance;
 
-  private Bank bank;
+    private Bank bank;
 
-  /**
-   * Use this function to subtract balance to ATM
-   *
-   * @param amount
-   */
-  public void subtract(BigDecimal amount) {
-    this.balance = this.balance.subtract(amount);
-  }
+    /**
+     * Use this function to subtract balance to ATM
+     *
+     * @param amount
+     */
+    public void subtract(BigDecimal amount) {
+        this.balance = this.balance.subtract(amount);
+    }
 }

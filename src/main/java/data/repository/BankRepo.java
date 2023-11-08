@@ -15,16 +15,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.NONE)
 public class BankRepo {
 
-        private static final long DEFAULT_DAILY_EXPENSE = 5_000_000;
-        private static final long DEFAULT_WITHDRAWAL_LIMIT = 2_500_000;
+    private static final long DEFAULT_DAILY_EXPENSE = 5_000_000;
+    private static final long DEFAULT_WITHDRAWAL_LIMIT = 2_500_000;
 
     private static final Set<Bank> store = new HashSet<>();
+
     static {
         Bank bri = Bank.builder()
                 .id(UUID.randomUUID().toString())
-                        .name(BankCompany.BRI.getName())
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+                .name(BankCompany.BRI.getName())
+                .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+                .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
                 .build();
         store.add(bri);
         bri.getCustomers().add(Customer.builder()
@@ -37,10 +38,10 @@ public class BankRepo {
 
         Bank bni = Bank.builder()
                 .id(UUID.randomUUID().toString())
-                        .name(BankCompany.BNI.getName())
+                .name(BankCompany.BNI.getName())
                 .depositFeature(true)
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+                .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+                .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
                 .build();
         store.add(bni);
         bni.getCustomers().add(Customer.builder()
@@ -53,10 +54,10 @@ public class BankRepo {
 
         Bank mandiri = Bank.builder()
                 .id(UUID.randomUUID().toString())
-                        .name(BankCompany.MANDIRI.getName())
+                .name(BankCompany.MANDIRI.getName())
                 .depositFeature(true)
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+                .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+                .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
                 .build();
         store.add(mandiri);
         mandiri.getCustomers().add(Customer.builder()
@@ -69,9 +70,9 @@ public class BankRepo {
 
         Bank bca = Bank.builder()
                 .id(UUID.randomUUID().toString())
-                        .name(BankCompany.BCA.getName())
-                        .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
-                        .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
+                .name(BankCompany.BCA.getName())
+                .maxExpensePerUserDaily(BigDecimal.valueOf(DEFAULT_DAILY_EXPENSE))
+                .maxExpensePerWithdrawal(BigDecimal.valueOf(DEFAULT_WITHDRAWAL_LIMIT))
                 .build();
         store.add(bca);
         bca.getCustomers().add(Customer.builder()
@@ -85,6 +86,11 @@ public class BankRepo {
 
     public static Optional<Bank> findBankByName(String name) {
         return store.stream().filter(item -> name.equals(item.getName())).findAny();
+    }
+
+    public Optional<Customer> findBankByAccountAndPin(String account, String pin) {
+        return store.stream().map(Bank::getCustomers).flatMap(Set::stream)
+                .filter(item -> account.equals(item.getAccount()) && pin.equals(item.getPin())).findAny();
     }
 
 }
