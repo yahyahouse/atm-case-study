@@ -92,5 +92,9 @@ public class BankRepo {
         return store.stream().map(Bank::getCustomers).flatMap(Set::stream)
                 .filter(item -> account.equals(item.getAccount()) && pin.equals(item.getPin())).findAny();
     }
+    public Optional<Customer> cashWithdrawal(Customer customer) {
+        return store.stream().map(Bank::getCustomers).flatMap(Set::stream)
+                .filter(item -> customer.getAccount().equals(item.getAccount()) && customer.getPin().equals(item.getPin())).findAny();
+    }
 
 }

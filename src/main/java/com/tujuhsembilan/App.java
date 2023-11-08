@@ -76,16 +76,19 @@ public class App {
             while (loop) {
                 int num = 1;
                 for (String menu : Arrays.asList(Feature.values()).stream()
-                        .map(item -> "ATM " + item.getName())
+                        .map(Feature::getName)
                         .collect(Collectors.toList())) {
                     System.out.println(" " + num + ". " + menu);
                     num++;
                 }
                 System.out.println(" 0. EXIT");
 
-                int selection = in.nextInt() - 1;
+                printDivider();
+
+                System.out.print(" > ");
+                int selection = in.nextInt();
                 if (selection >= 0 && selection < Feature.values().length) {
-                    new App(BankCompany.getByOrder(selection).getName()).start();
+                    menuBank(selection);
                 } else if (selection == -1) {
                     loop = false;
                 } else {
@@ -98,6 +101,34 @@ public class App {
             System.out.println("Cannot find Bank or ATM");
             delay();
         }
+    }
+
+    public void menuBank(int selection) {
+        switch (selection) {
+            case 1:
+                ATMLogic.accountBalanceInformation();
+                break;
+            case 2:
+                ATMLogic.moneyWithdrawal();
+                break;
+            case 3:
+                ATMLogic.phoneCreditsTopUp();
+                break;
+            case 4:
+                ATMLogic.electricityBillsToken();
+                break;
+            case 5:
+                ATMLogic.accountMutation();
+                break;
+            case 6:
+                ATMLogic.moneyDeposit();
+                break;
+            default:
+                System.out.println("Invalid input");
+                delay();
+                break;
+        }
+
     }
 
 }
